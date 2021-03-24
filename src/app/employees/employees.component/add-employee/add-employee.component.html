@@ -1,0 +1,71 @@
+<form class="g-3 needs-validation p-2" #addEmployeeForm="ngForm" (ngSubmit)="addEmployee(addEmployeeForm)">
+  <div class="row">
+    <div class="col-md-3 form-group">
+      <label for="employeeName" class="form-label">Employee name</label>
+      <input type="text" class="form-control" id="employeeName" required ngModel #employeeName='ngModel'
+             name="employeeName">
+      <div class="alert alert-danger" *ngIf="employeeName.touched &&!employeeName.valid">Please enter Employees Name
+      </div>
+    </div>
+
+    <div class="col-md-3 form-group">
+      <label for="employeeDepartment" class="form-label">Department</label>
+      <br>
+      <select class="form-select form-select-lg p-2" id="employeeDepartment" required ngModel
+              #employeeDepartment='ngModel' name="employeeDepartment">
+        <option disabled value=""></option>
+        <option *ngFor="let department of departments" [ngValue]="department">{{department.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="employeeCode" class="form-label">Employee code</label>
+      <input type="text" class="form-control" id="employeeCode" required ngModel #employeeCode='ngModel'
+             pattern="[0-9]+"
+             name="employeeCode">
+      <div class="alert alert-danger" *ngIf="employeeCode.touched &&!employeeCode.valid">
+        <div *ngIf="employeeCode.errors.required">Please enter code</div>
+        <div *ngIf="employeeCode.errors.pattern">Only numbers are allowed</div>
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+      <label class="form-label">Birthday</label>
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"  ngModel
+                 name="birthday" ngbDatepicker #d="ngbDatepicker" required>
+          <div class="input-group-append">
+            <button class="btn  calendar" (click)="d.toggle()" type="button">
+
+              <img src="assets/calendar.svg"/></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <span class="p-2">Gender</span>
+      <span class="radio p-2">
+      <label>
+        <input type="radio" name="employeeGender" value="1" ngModel required> Male
+      </label>
+    </span>
+      <span class="radio p-2">
+      <label>
+        <input type="radio" name="employeeGender" value="2" ngModel required> Female
+      </label>
+    </span>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-dark pl-5 pr-5" type="submit" [disabled]="!addEmployeeForm.valid">Add</button>
+    </div>
+
+  </div>
+
+</form>
+
