@@ -10,17 +10,22 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NavbarComponent} from './ui/navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import {SearchEmployeeComponent} from './employees/employees.component/search-employee/search-employee.component';
-import { HomeComponent } from './home/home.component';
-import { SidebarComponent } from './ui/sidebar/sidebar.component';
+import {HomeComponent} from './home/home.component';
+import {SidebarComponent} from './ui/sidebar/sidebar.component';
+
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
+
     AppComponent,
     AddEmployeeComponent,
     NavbarComponent,
     SearchEmployeeComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,10 +33,20 @@ import { SidebarComponent } from './ui/sidebar/sidebar.component';
     FormsModule,
     NgbModule,
     RouterModule.forRoot([
-      {path: '', component: HomeComponent },
+      {path: '', component: HomeComponent},
       {path: 'add', component: HomeComponent},
       {path: 'search', component: SearchEmployeeComponent}
-    ])
+    ]),
+    NgbModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
+
   ],
   providers: [
     EmployeesService
@@ -39,4 +54,8 @@ import { SidebarComponent } from './ui/sidebar/sidebar.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

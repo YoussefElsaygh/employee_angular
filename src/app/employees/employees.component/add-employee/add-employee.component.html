@@ -1,7 +1,7 @@
 <form class="g-3 needs-validation p-2" #addEmployeeForm="ngForm" (ngSubmit)="addEmployee(addEmployeeForm)">
   <div class="row">
     <div class="col-md-3 form-group">
-      <label for="employeeName" class="form-label">Employee name</label>
+      <label for="employeeName" class="form-label" translate>employee_name</label>
       <input type="text" class="form-control" id="employeeName" required ngModel #employeeName='ngModel'
              name="employeeName">
       <div class="alert alert-danger" *ngIf="employeeName.touched &&!employeeName.valid">Please enter Employees Name
@@ -9,7 +9,7 @@
     </div>
 
     <div class="col-md-3 form-group">
-      <label for="employeeDepartment" class="form-label">Department</label>
+      <label for="employeeDepartment" class="form-label" translate>department_label</label>
       <br>
       <select class="form-select form-select-lg p-2" id="employeeDepartment" required ngModel
               #employeeDepartment='ngModel' name="employeeDepartment">

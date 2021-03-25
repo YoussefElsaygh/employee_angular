@@ -3,7 +3,7 @@ import {EmployeesService} from '../../employees.service/employees.service';
 import Department from '../../../models/department.model';
 import {NgbDate} from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date';
 import {Birthday, Employee, Gender} from '../../../models/employee.model';
-import {FormControl, NgForm} from '@angular/forms';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-add-employee',

@@ -6,8 +6,12 @@
     <li>
       <a routerLinkActive="active current" class="nav-item nav-link" routerLink="/search">Search</a>
     </li>
+    <li>
+      <button class="btn btn-info" (click)="changeLangage(isEnglish?'ar':'en')">{{isEnglish ? 'ar' : 'en'}}</button>
+    </li>
 
   </ul>
   <hr>
+
 
 </div>
