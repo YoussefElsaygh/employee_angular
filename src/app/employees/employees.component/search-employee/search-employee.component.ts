@@ -14,6 +14,7 @@ export class SearchEmployeeComponent {
 
   departments: Department[];
   filteredEmployees: Employee[] = [];
+  isSearched = false;
 
   constructor(private service: EmployeesService) {
     this.departments = service.getAllDepartments();
@@ -25,6 +26,7 @@ export class SearchEmployeeComponent {
     const name: string = form.employeeName;
     const department: Department = form.employeeDepartment;
     this.filteredEmployees = this.service.searchEmployee(name, department);
+    this.isSearched = true;
     f.resetForm();
   }
 

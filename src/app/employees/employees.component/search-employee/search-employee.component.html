@@ -17,36 +17,37 @@
         <option *ngFor="let department of departments" [ngValue]="department">{{department.name}}</option>
       </select>
     </div>
+
+  </div>
+  <div class="row">
     <div class="col-md-3">
-      <button class="btn btn-dark pl-5 pr-5" type="submit" [disabled]="!searchEmployeeForm.valid">Search</button>
+    <button class="btn btn-dark" type="submit" [disabled]="!searchEmployeeForm.valid">Search</button>
     </div>
   </div>
-
-  <div class="row" *ngFor="let employee of filteredEmployees">
-    {{employee.employeeName}}
-  </div>
-  <table class="table" *ngIf="filteredEmployees.length>0">
-    <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Employee Name</th>
-      <th scope="col">Employee Code</th>
-      <th scope="col">Department</th>
-      <th scope="col">Birthday</th>
-      <th scope="col">Gender</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let employee of filteredEmployees">
-      <th scope="row">#</th>
-      <td>{{employee.employeeName}}</td>
-      <td>{{employee.code}}</td>
-      <td>{{employee.department.name}}</td>
-      <td>{{employee.birthday.day + '/' + employee.birthday.month + '/' + employee.birthday.year}}</td>
-      <td>{{(employee.gender == 0 ? "M" : "F")}}</td>
-    </tr>
-    </tbody>
-  </table>
-
-
 </form>
+
+<div class="row alert alert-danger" *ngIf="filteredEmployees.length==0 &&isSearched">
+  No employees are found
+</div>
+<table class="table" *ngIf="filteredEmployees.length>0">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Employee Name</th>
+    <th scope="col">Employee Code</th>
+    <th scope="col">Department</th>
+    <th scope="col">Birthday</th>
+    <th scope="col">Gender</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of filteredEmployees">
+    <th scope="row">#</th>
+    <td>{{employee.employeeName}}</td>
+    <td>{{employee.code}}</td>
+    <td>{{employee.department.name}}</td>
+    <td>{{employee.birthday.day + '/' + employee.birthday.month + '/' + employee.birthday.year}}</td>
+    <td>{{(employee.gender == 0 ? "M" : "F")}}</td>
+  </tr>
+  </tbody>
+</table>

@@ -11,6 +11,7 @@ import {NavbarComponent} from './ui/navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import {SearchEmployeeComponent} from './employees/employees.component/search-employee/search-employee.component';
 import { HomeComponent } from './home/home.component';
+import { SidebarComponent } from './ui/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
     AddEmployeeComponent,
     NavbarComponent,
     SearchEmployeeComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
