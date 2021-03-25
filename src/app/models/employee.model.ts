@@ -8,7 +8,7 @@ export class Employee {
               public code: number,
               public department: Department,
               public gender: Gender,
-              public birthday: Birthday) {
+              public birthday: Birthday, public isSelected: boolean = false) {
   }
 
 

@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {Employee, Gender} from '../../models/employee.model';
+import {Birthday, Employee, Gender} from '../../models/employee.model';
 import Department from '../../models/department.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeesService {
-  private employees: Employee[] = [];
+  private employees: Employee[] = [new Employee('Youssef', 1, new Department('IT', 1), Gender.male, new Birthday('1994', '8', '11'))];
 
   // tslint:disable-next-line:typedef
   getAllEmployees() {
@@ -25,7 +25,7 @@ export class EmployeesService {
 
   // tslint:disable-next-line:typedef
   searchEmployee(name: string, department: Department) {
-    return this.employees.filter((employee, idx, arr) => employee.employeeName == name && employee.department.id == department.id);
+    return this.employees.filter((employee, idx, arr) => employee.employeeName === name && employee.department.id === department.id);
 
   }
 

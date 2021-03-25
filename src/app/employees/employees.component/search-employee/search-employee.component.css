@@ -1,8 +1,6 @@
-select{
-  border:1px solid #ced4da;
-  border-radius: 5px;
-  width: 100%;
+
+.table__width {
+  width: auto !important;
+  margin: auto;
 }
-.calendar{
-  border-color:#ced4da
-}
+

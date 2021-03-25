@@ -1,8 +1,15 @@
-.sidebar{
+.sidebar {
   float: left;
 
 }
 
-.sidebar__height{
+.sidebar__height {
   height: 100%;
+}
+
+
+@media screen and (max-width: 512px) {
+  .sidebar {
+    display: none !important;
+  }
 }

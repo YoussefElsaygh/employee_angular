@@ -15,6 +15,8 @@ export class SearchEmployeeComponent {
   departments: Department[];
   filteredEmployees: Employee[] = [];
   isSearched = false;
+  isAllEmployeesChecked = false;
+  employeesSelected: boolean[] = [];
 
   constructor(private service: EmployeesService) {
     this.departments = service.getAllDepartments();
@@ -27,7 +29,15 @@ export class SearchEmployeeComponent {
     const department: Department = form.employeeDepartment;
     this.filteredEmployees = this.service.searchEmployee(name, department);
     this.isSearched = true;
-    f.resetForm();
+    // f.resetForm();
+  }
+
+  // tslint:disable-next-line:typedef
+  toggleCheckAll() {
+    this.filteredEmployees.forEach((e) => {
+        e.isSelected = this.isAllEmployeesChecked;
+      }
+    );
   }
 
 }

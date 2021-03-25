@@ -6,4 +6,12 @@ html{
 body{
   height: 100%;
 }
+select{
+  border:1px solid #ced4da;
+  border-radius: 5px;
+  width: 100%;
+}
+.calendar{
+  border-color:#ced4da
+}
 
