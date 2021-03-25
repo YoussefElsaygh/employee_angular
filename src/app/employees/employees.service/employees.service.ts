@@ -23,5 +23,11 @@ export class EmployeesService {
     this.employees.push(employee);
   }
 
+  // tslint:disable-next-line:typedef
+  searchEmployee(name: string, department: Department) {
+    return this.employees.filter((employee, idx, arr) => employee.employeeName == name && employee.department.id == department.id);
+
+  }
+
 
 }
