@@ -4,7 +4,7 @@
       <label for="employeeName" class="form-label" translate>employee_name</label>
       <input type="text" class="form-control" id="employeeName" required ngModel #employeeName='ngModel'
              name="employeeName">
-      <div class="alert alert-danger" *ngIf="employeeName.touched &&!employeeName.valid">Please enter Employees Name
+      <div class="alert alert-danger" *ngIf="employeeName.touched &&!employeeName.valid" translate>err_emp_name
       </div>
     </div>
 
@@ -42,11 +42,11 @@
         </label>
       </div>
     </th>
-    <th scope="col">Employee Name</th>
-    <th scope="col">Employee Code</th>
-    <th scope="col">Department</th>
-    <th scope="col">Birthday</th>
-    <th scope="col">Gender</th>
+    <th scope="col" translate>employee_name</th>
+    <th scope="col" translate>employee_code_label</th>
+    <th scope="col" translate>department_label</th>
+    <th scope="col" translate>birthday_label</th>
+    <th scope="col" translate>gender_label</th>
   </tr>
   </thead>
   <tbody>
