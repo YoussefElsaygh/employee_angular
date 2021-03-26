@@ -1,5 +1,15 @@
 {
   "employees_header_title": "Employees",
   "employee_name": "Employee name",
-  "department_label": "Employee name"
+  "department_label": "Employee name",
+  "add_label": "Add",
+  "search_label": "Search",
+  "employee_code_label": "Employee Code",
+  "birthday_label": "Happy Birthday",
+  "gender_label": "Gender",
+  "male_label": " Male",
+  "female_label": " Female",
+  "err_emp_name": "Please enter employee's name",
+  "err_emp_code": "Please enter employee's code",
+  "err_emp_numbers_only": "Only numbers are allowed"
 }

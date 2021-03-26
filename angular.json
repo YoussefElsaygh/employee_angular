@@ -27,14 +27,12 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               {
-                "input": "src/styles-ar.css",
-              "bundleName": "arabicStyle",
-              "lazy": true
+                "input": "src/styles/styles-ar.css",
+              "bundleName": "arabicStyle"
               },
               {
-                "input": "src/styles-en.css",
-              "bundleName": "englishStyle",
-              "lazy": true
+                "input": "src/styles/styles-en.css",
+              "bundleName": "englishStyle"
               }
             ],
             "scripts": []

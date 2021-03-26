@@ -1,12 +1,12 @@
 <div class="d-flex flex-column p-3 text-white bg-dark sidebar sidebar__height" style="width: 180px;">
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
-      <a class="nav-item nav-link" routerLinkActive="active current" routerLink="/add">Add</a>
+      <a class="nav-item nav-link" routerLinkActive="active current" routerLink="/add" translate>add_label</a>
     </li>
     <li>
-      <a routerLinkActive="active current" class="nav-item nav-link" routerLink="/search">Search</a>
+      <a routerLinkActive="active current" class="nav-item nav-link" routerLink="/search" translate>search_label</a>
     </li>
-    <li>
+    <li class="sidebar__language">
       <button class="btn btn-info" (click)="changeLangage(isEnglish?'ar':'en')">{{isEnglish ? 'ar' : 'en'}}</button>
     </li>
 

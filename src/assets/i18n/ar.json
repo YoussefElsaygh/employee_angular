@@ -1,6 +1,16 @@
 {
   "employees_header_title": "الموظفين",
   "employee_name": "اسم الموظف",
-  "department_label": "االقسم"
+  "department_label": "القسم",
+  "add_label": "أضف موظف",
+  "search_label": "بحث",
+  "employee_code_label": "كود الموظف",
+  "birthday_label": "تاريخ الميلاد",
+  "gender_label": "الجنس",
+  "male_label": " ذكر",
+  "female_label": " أنثي",
+  "err_emp_name": "برجاء إدخال اسم الموظف",
+  "err_emp_code": "برجاء إدخال كود الموظف",
+  "err_emp_numbers_only": "برجاء ادخال ارقام فقط"
 
 }

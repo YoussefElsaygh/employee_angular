@@ -16,6 +16,7 @@ import {SidebarComponent} from './ui/sidebar/sidebar.component';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {FooterComponent} from './ui/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     SearchEmployeeComponent,
     HomeComponent,
     SidebarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

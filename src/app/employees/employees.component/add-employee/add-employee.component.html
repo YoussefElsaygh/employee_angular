@@ -4,7 +4,7 @@
       <label for="employeeName" class="form-label" translate>employee_name</label>
       <input type="text" class="form-control" id="employeeName" required ngModel #employeeName='ngModel'
              name="employeeName">
-      <div class="alert alert-danger" *ngIf="employeeName.touched &&!employeeName.valid">Please enter Employees Name
+      <div class="alert alert-danger" *ngIf="employeeName.touched &&!employeeName.valid" translate>err_emp_name
       </div>
     </div>
 
@@ -21,19 +21,19 @@
 
   <div class="row">
     <div class="col-md-3">
-      <label for="employeeCode" class="form-label">Employee code</label>
+      <label for="employeeCode" class="form-label" translate>employee_code_label</label>
       <input type="text" class="form-control" id="employeeCode" required ngModel #employeeCode='ngModel'
              pattern="[0-9]+"
              name="employeeCode">
       <div class="alert alert-danger" *ngIf="employeeCode.touched &&!employeeCode.valid">
-        <div *ngIf="employeeCode.errors.required">Please enter code</div>
-        <div *ngIf="employeeCode.errors.pattern">Only numbers are allowed</div>
+        <div *ngIf="employeeCode.errors.required" translate>err_emp_code</div>
+        <div *ngIf="employeeCode.errors.pattern" translate>err_emp_numbers_only</div>
       </div>
 
     </div>
 
     <div class="col-md-3">
-      <label class="form-label">Birthday</label>
+      <label class="form-label" translate>birthday_label</label>
       <div class="form-group">
         <div class="input-group">
           <input class="form-control" placeholder="yyyy-mm-dd"  ngModel
@@ -49,20 +49,20 @@
   </div>
   <div class="row">
     <div class="col-md-4">
-      <span class="p-2">Gender</span>
+      <span class="p-2" translate>gender_label</span>
       <span class="radio p-2">
-      <label>
-        <input type="radio" name="employeeGender" value="1" ngModel required> Male
+      <label translate>
+        <input type="radio" name="employeeGender" value="1" ngModel required >male_label
       </label>
     </span>
       <span class="radio p-2">
-      <label>
-        <input type="radio" name="employeeGender" value="2" ngModel required> Female
+      <label translate>
+        <input type="radio" name="employeeGender" value="2" ngModel required>female_label
       </label>
     </span>
     </div>
     <div class="col-md-6">
-      <button class="btn btn-dark pl-5 pr-5" type="submit" [disabled]="!addEmployeeForm.valid">Add</button>
+      <button class="btn btn-dark pl-5 pr-5" type="submit" [disabled]="!addEmployeeForm.valid" translate>add_label</button>
     </div>
 
   </div>
